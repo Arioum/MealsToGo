@@ -17,9 +17,14 @@ const SearchContainer = styled(View)`
 
 const RestaurantListContainer = styled(View)`
   background-color: ${(props) => props.theme.colors.bg.secondary};
-  padding: ${(props) => props.theme.space[3]};
   flex: 1;
 `;
+
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
 
 export const RestaurantsScreen = () => {
   return (
@@ -28,7 +33,7 @@ export const RestaurantsScreen = () => {
         <Searchbar />
       </SearchContainer>
       <RestaurantListContainer>
-        <FlatList
+        <RestaurantList
           data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
           renderItem={() => (
             <Spacer position="bottom" size="large">
@@ -36,7 +41,6 @@ export const RestaurantsScreen = () => {
             </Spacer>
           )}
           keyExtractor={(item) => item.name}
-          contentContainerStyle={{}}
         />
       </RestaurantListContainer>
     </SafeArea>
