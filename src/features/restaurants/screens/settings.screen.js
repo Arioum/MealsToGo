@@ -6,7 +6,7 @@ export const SettingsScreen = () => {
   return (
     <SafeArea>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Home!</Text>
+        <Text>Settings</Text>
       </View>
     </SafeArea>
   );
