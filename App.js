@@ -18,6 +18,20 @@ import { SettingsScreen } from "./src/features/restaurants/screens/settings.scre
 
 const Tab = createBottomTabNavigator();
 
+// const createScreenOptions = ({ route }) => {
+//   const TAB_ICON = ({ focused }) => ({
+//     Restaurants: `${focused ? "restaurant" : "restaurant-outline"}`,
+//     Maps: `${focused ? "ios-map" : "ios-map-outline"}`,
+//     Settings: `${focused ? "ios-settings-sharp" : "ios-settings-outline"}`,
+//   });
+//   const iconName = TAB_ICON[route.name];
+//   return {
+//     tabBarIcon: ({ size, color }) => (
+//       <Ionicons name={iconName} size={size} color={color} />
+//     ),
+//   };
+// };
+
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
@@ -50,13 +64,27 @@ export default function App() {
                 }
                 return <Ionicons name={iconName} size={size} color={color} />;
               },
+            })}
+            tabBarOptions={{
               tabBarActiveTintColor: "tomato",
               tabBarInactiveTintColor: "gray",
-            })}
+            }}
           >
-            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-            <Tab.Screen name="Maps" component={MapsScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
+            <Tab.Screen
+              name="Restaurants"
+              component={RestaurantsScreen}
+              options={{ headerShown: false }}
+            />
+            <Tab.Screen
+              name="Maps"
+              component={MapsScreen}
+              options={{ headerShown: false }}
+            />
+            <Tab.Screen
+              name="Settings"
+              component={SettingsScreen}
+              options={{ headerShown: false }}
+            />
           </Tab.Navigator>
         </NavigationContainer>
         <ExpoStatusBar style="auto" />

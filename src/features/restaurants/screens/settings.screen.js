@@ -1,12 +1,6 @@
 import React from "react";
-import { StatusBar, SafeAreaView, View, Text } from "react-native";
-import styled from "styled-components";
-import { Spacer } from "../../../components/spacer/spacer.component";
-
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`}
-`;
+import { View, Text } from "react-native";
+import { SafeArea } from "../../../components/utility/safe-area.component";
 
 export const SettingsScreen = () => {
   return (
