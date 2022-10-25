@@ -66,11 +66,9 @@ export default function App() {
                   }
                   return <Ionicons name={iconName} size={size} color={color} />;
                 },
-              })}
-              tabBarOptions={{
                 tabBarActiveTintColor: "tomato",
                 tabBarInactiveTintColor: "gray",
-              }}
+              })}
             >
               <Tab.Screen
                 name="Restaurants"
